@@ -1,26 +1,9 @@
 <script setup>
 
-import { ref, computed } from 'vue'
+
 import { useCounterStore } from '@/stores/counter';
 
 const storeCounter = useCounterStore()
-
-const count = ref(0)
-
-const increaseCount = () => {
-  // console.log('increaseCount')
-  count.value++
-}
-
-const decreaseCount = () => {
- 
-  count.value--
-}
-
-const oddOreven = computed(() => {
-  if(count.value % 2 === 0) return 'even'
-  return 'odd'
-})
 
 </script>
 
@@ -36,7 +19,7 @@ const oddOreven = computed(() => {
     </div>
     <hr>
     <div>
-      This counter is: {{ oddOreven }}
+      This counter is: {{ storeCounter.oddOrEven }}
     </div>
   </div>
 </template>
